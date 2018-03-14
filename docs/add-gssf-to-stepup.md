@@ -217,13 +217,42 @@ translations are specified in the parameters.
          nl_NL: 'NL ra.vetting.gssf.initiate.gauth.error.gssf_id_mismatch'
     ```
     
-4. To be able to register and vet the token we need to instruct the gateway to proxy requests for the newly added Gssp. Enable the new GSSP by adding it to the list of enabled SP's in the Gateway configuration. In `Stepup-Gateway/app/config/samlstepupproviders_parameters.yml` add to `gssp_allowed_sps`: 
+4.  The GSSP configuration in the `Stepup-Gateway/app/config/samlstepupproviders.yml` should look like:
+    ```yaml
+    gauth:
+        enabled: %gssp_gauth_enabled%
+        hosted:
+            service_provider:
+                public_key: %gssp_gauth_sp_publickey%
+                private_key: %gssp_gauth_sp_privatekey%
+            identity_provider:
+                service_provider_repository: saml.entity_repository
+                public_key: %gssp_gauth_idp_publickey%
+                private_key: %gssp_gauth_idp_privatekey%
+            metadata:
+                public_key: %gssp_gauth_metadata_publickey%
+                private_key: %gssp_gauth_metadata_privatekey%
+        remote:
+            entity_id: %gssp_gauth_remote_entity_id%
+            sso_url: %gssp_gauth_remote_sso_url%
+            certificate: %gssp_gauth_remote_certificate%
+        view_config:
+            logo: %gssp_gauth_logo%
+            title: %gssp_gauth_title%
+    ``` 
+    
+    And for the view config add for each provider, to the same parameters file:    
+    ```yaml
+    gssp_gauth_logo: /images/second-factor/gauth.png
+    gssp_gauth_title: Gauth
+    ```
+    
+    To be able to register and vet the token we need to instruct the gateway to proxy requests for the newly added Gssp. Enable the new GSSP by adding it to the list of enabled SP's in the Gateway configuration. In `Stepup-Gateway/app/config/samlstepupproviders_parameters.yml` add to `gssp_allowed_sps`: 
     ```yaml
     gssp_allowed_sps:
         - 'https://ra-dev.stepup.coin.surf.net/app_dev.php/vetting-procedure/gssf/gauth/metadata'
         - 'https://ss-dev.stepup.coin.surf.net/app_dev.php/registration/gssf/gauth/metadata'
     ```
-
 5. Push a new middleware configuration, instructing the Stepup applications of the existence of the new GSSP service provider. To do so add the registration and vetting entity id's to the list of gateway serviceproviders. 
 
 See the Postman examples provided in the Stepup-Middleware project for more details. Basically add the following configuration to the `management/configuration` JSON payload:
