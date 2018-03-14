@@ -263,6 +263,8 @@ The LoA required for RA is configured in Stepup-RA's `parameters.yml` and throug
 
 This section describes how the [GSSP example application](https://github.com/OpenConext/Stepup-gssp-example/) can be used in Stepup to test the GSSP mechanism. Below configuration allows registration and authentication on the development environment using Tiqr as second factor, using the GSSP example application instead of a real tiqr implementation.
 
+Please note that you should first follow the steps described in the [Add GSSP to Stepup readme](add-gssf-to-stepup.md) before implementing this howto. 
+
 First, install, configure and run the example application. You can do that in the VM, but that's not required. Doing it on your host machine with only PHP installed might be easier.
 
     git clone https://github.com/OpenConext/Stepup-gssp-example.git
