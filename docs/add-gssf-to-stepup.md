@@ -292,3 +292,9 @@ See the Postman examples provided in the Stepup-Middleware project for more deta
                 },
             ]
     ```
+    
+## Logo's
+GSSP logo's should be stored in the `/web/images/second-factor/` folder for the application in question. We advice adding logo's in PNG format even tho other formats should work fine. 
+
+Provide a square logo of 512x512 pixels.
+ 
