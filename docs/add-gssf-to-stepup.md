@@ -298,3 +298,7 @@ GSSP logo's should be stored in the `/web/images/second-factor/` folder for the 
 
 Provide a square logo of 512x512 pixels.
  
+The following applications use second factor logos:
+ - RA
+ - SelfService
+ - Gateway
