@@ -100,14 +100,14 @@ Remove the examples in this file and put:
 
 
 ```
-$metadata['https://gw-dev.stepup.coin.surf.net/app_dev.php/authentication/metadata'] = array(
-    'entityid'                 => 'https://gw-dev.stepup.coin.surf.net/app_dev.php/authentication/metadata',
+$metadata['https://gw.stepup.example.com/app_dev.php/authentication/metadata'] = array(
+    'entityid'                 => 'https://gw.stepup.example.com/app_dev.php/authentication/metadata',
     'contacts'                 => array(),
     'metadata-set'             => 'saml20-sp-remote',
     'AssertionConsumerService' => array(
         0 => array(
             'Binding'  => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-            'Location' => 'https://gw-dev.stepup.coin.surf.net/app_dev.php/authentication/consume-assertion',
+            'Location' => 'https://gw.stepup.example.com/app_dev.php/authentication/consume-assertion',
             'index'    => 0,
         ),
     ),
@@ -117,14 +117,14 @@ $metadata['https://gw-dev.stepup.coin.surf.net/app_dev.php/authentication/metada
     'ForceAuthn' => true
 );
 
-$metadata['https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/metadata'] = array(
-    'entityid'                 => 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/metadata',
+$metadata['https://gw.stepup.example.com/app_dev.php/gssp/tiqr/metadata'] = array(
+    'entityid'                 => 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/metadata',
     'contacts'                 => array(),
     'metadata-set'             => 'saml20-sp-remote',
     'AssertionConsumerService' => array(
         0 => array(
             'Binding'  => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-            'Location' => 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/consume-assertion',
+            'Location' => 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/consume-assertion',
             'index'    => 0,
         ),
     ),
@@ -240,13 +240,13 @@ The LoA required for RA is configured in Stepup-RA's `parameters.yml` and throug
         "service_providers": [
             ...
             {
-               "entity_id": "https://ra-dev.stepup.coin.surf.net/app_dev.php/authentication/metadata",
+               "entity_id": "https://ra.stepup.example.com/app_dev.php/authentication/metadata",
                "public_key": "MIIEJTCCAw2gAwIBAgIJANug+o++1X5IMA0GCSqGSIb3DQEBCwUAMIGoMQswCQYDVQQGEwJOTDEQMA4GA1UECAwHVXRyZWNodDEQMA4GA1UEBwwHVXRyZWNodDEVMBMGA1UECgwMU1VSRm5ldCBCLlYuMRMwEQYDVQQLDApTVVJGY29uZXh0MRwwGgYDVQQDDBNTVVJGbmV0IERldmVsb3BtZW50MSswKQYJKoZIhvcNAQkBFhxzdXJmY29uZXh0LWJlaGVlckBzdXJmbmV0Lm5sMB4XDTE0MTAyMDEyMzkxMVoXDTE0MTExOTEyMzkxMVowgagxCzAJBgNVBAYTAk5MMRAwDgYDVQQIDAdVdHJlY2h0MRAwDgYDVQQHDAdVdHJlY2h0MRUwEwYDVQQKDAxTVVJGbmV0IEIuVi4xEzARBgNVBAsMClNVUkZjb25leHQxHDAaBgNVBAMME1NVUkZuZXQgRGV2ZWxvcG1lbnQxKzApBgkqhkiG9w0BCQEWHHN1cmZjb25leHQtYmVoZWVyQHN1cmZuZXQubmwwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDXuSSBeNJY3d4p060oNRSuAER5nLWT6AIVbv3XrXhcgSwc9m2b8u3ksp14pi8FbaNHAYW3MjlKgnLlopYIylzKD/6Ut/clEx67aO9Hpqsc0HmIP0It6q2bf5yUZ71E4CN2HtQceO5DsEYpe5M7D5i64kS2A7e2NYWVdA5Z01DqUpQGRBc+uMzOwyif6StBiMiLrZH3n2r5q5aVaXU4Vy5EE4VShv3Mp91sgXJj/v155fv0wShgl681v8yf2u2ZMb7NKnQRA4zM2Ng2EUAyy6PQ+Jbn+rALSm1YgiJdVuSlTLhvgwbiHGO2XgBi7bTHhlqSrJFK3Gs4zwIsop/XqQRBAgMBAAGjUDBOMB0GA1UdDgQWBBQCJmcoa/F7aM3jIFN7Bd4uzWRgzjAfBgNVHSMEGDAWgBQCJmcoa/F7aM3jIFN7Bd4uzWRgzjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBd80GpWKjp1J+Dgp0blVAox1s/WPWQlex9xrx1GEYbc5elp3svS+S82s7dFm2llHrrNOBt1HZVC+TdW4f+MR1xq8O5lOYjDRsosxZc/u9jVsYWYc3M9bQAx8VyJ8VGpcAK+fLqRNabYlqTnj/t9bzX8fS90sp8JsALV4g84Aj0G8RpYJokw+pJUmOpuxsZN5U84MmLPnVfmrnuCVh/HkiLNV2c8Pk8LSomg6q1M1dQUTsz/HVxcOhHLj/owwh3IzXf/KXV/E8vSYW8o4WWCAnruYOWdJMI4Z8NG1Mfv7zvb7U3FL1C/KLV04DqzALXGj+LVmxtDvuxqC042apoIDQV",
                "acs": [
-                    "https://ra-dev.stepup.coin.surf.net/app_dev.php/authentication/consume-assertion"
+                    "https://ra.stepup.example.com/app_dev.php/authentication/consume-assertion"
                 ],
                 "loa": {
-                    "__default__": "https://gw-dev.stepup.coin.surf.net/authentication/loa3"
+                    "__default__": "https://gw.stepup.example.com/authentication/loa3"
                 },
                 "assertion_encryption_enabled": false,
                 "blacklisted_encryption_algorithms": []
@@ -273,10 +273,10 @@ First, install, configure and run the example application. You can do that in th
 
 Now configure gateway as the remote SP in `app/config/parameters.yml`:
 
-    saml_remote_sp_entity_id: 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/metadata'
-    saml_remote_sp_sso_url: 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/single-sign-on'
+    saml_remote_sp_entity_id: 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/metadata'
+    saml_remote_sp_sso_url: 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/single-sign-on'
     saml_remote_sp_certificate: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer'
-    saml_remote_sp_acs: 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/consume-assertion'
+    saml_remote_sp_acs: 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/consume-assertion'
 
 Finally, compile the assets and run the example application:
 
@@ -291,15 +291,15 @@ Verify the GSSP example application is running without error on http://localhost
 Now configure `Stepup-Gateway/app/config/samlstepupproviders_parameters.yml`:
 
     gssp_allowed_sps:
-        - 'https://ra-dev.stepup.coin.surf.net/app_dev.php/vetting-procedure/gssf/tiqr/metadata'
-        - 'https://ss-dev.stepup.coin.surf.net/app_dev.php/registration/gssf/tiqr/metadata'
+        - 'https://ra.stepup.example.com/app_dev.php/vetting-procedure/gssf/tiqr/metadata'
+        - 'https://selfservice.stepup.example.com/app_dev.php/registration/gssf/tiqr/metadata'
 
-    gssp_tiqr_sp_publickey: /var/www/gw-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
-    gssp_tiqr_sp_privatekey: /var/www/gw-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
-    gssp_tiqr_idp_publickey: /var/www/gw-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
-    gssp_tiqr_idp_privatekey: /var/www/gw-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
-    gssp_tiqr_metadata_publickey: /var/www/gw-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
-    gssp_tiqr_metadata_privatekey: /var/www/gw-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
+    gssp_tiqr_sp_publickey: /src/Stepup-Gateway//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
+    gssp_tiqr_sp_privatekey: /src/Stepup-Gateway//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
+    gssp_tiqr_idp_publickey: /src/Stepup-Gateway//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
+    gssp_tiqr_idp_privatekey: /src/Stepup-Gateway//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
+    gssp_tiqr_metadata_publickey: /src/Stepup-Gateway//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
+    gssp_tiqr_metadata_privatekey: /src/Stepup-Gateway//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
     gssp_tiqr_remote_entity_id: 'http://localhost:1234/app_dev.php/saml/metadata'
     gssp_tiqr_remote_sso_url: 'http://localhost:1234/app_dev.php/saml/sso'
     gssp_tiqr_remote_certificate: |
@@ -329,14 +329,14 @@ Now configure `Stepup-Gateway/app/config/samlstepupproviders_parameters.yml`:
 
 And configure `Stepup-SelfService/app/config/samlstepupproviders_parameters.yml`:
 
-    gssp_tiqr_sp_publickey: /var/www/ss-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
-    gssp_tiqr_sp_privatekey: /var/www/ss-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
-    gssp_tiqr_idp_publickey: /var/www/ss-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
-    gssp_tiqr_idp_privatekey: /var/www/ss-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
-    gssp_tiqr_metadata_publickey: /var/www/ss-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
-    gssp_tiqr_metadata_privatekey: /var/www/ss-dev.stepup.coin.surf.net/vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
-    gssp_tiqr_remote_entity_id: 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/metadata'
-    gssp_tiqr_remote_sso_url: 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/single-sign-on'
+    gssp_tiqr_sp_publickey: /src/Stepup-SelfService//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
+    gssp_tiqr_sp_privatekey: /src/Stepup-SelfService//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
+    gssp_tiqr_idp_publickey: /src/Stepup-SelfService//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
+    gssp_tiqr_idp_privatekey: /src/Stepup-SelfService//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
+    gssp_tiqr_metadata_publickey: /src/Stepup-SelfService//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer
+    gssp_tiqr_metadata_privatekey: /src/Stepup-SelfService//vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem
+    gssp_tiqr_remote_entity_id: 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/metadata'
+    gssp_tiqr_remote_sso_url: 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/single-sign-on'
     gssp_tiqr_remote_certificate: |
                                   MIIEJTCCAw2gAwIBAgIJANug+o++1X5IMA0GCSqGSIb3DQEBCwUAMIGoMQswCQYD
                                   VQQGEwJOTDEQMA4GA1UECAwHVXRyZWNodDEQMA4GA1UEBwwHVXRyZWNodDEVMBMG
@@ -368,8 +368,8 @@ Finally, configure `Stepup-RA/app/config/samlstepupproviders_parameters.yml`:
     gssp_tiqr_sp_privatekey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem'
     gssp_tiqr_metadata_publickey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer'
     gssp_tiqr_metadata_privatekey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem'
-    gssp_tiqr_remote_entity_id: 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/metadata'
-    gssp_tiqr_remote_sso_url: 'https://gw-dev.stepup.coin.surf.net/app_dev.php/gssp/tiqr/single-sign-on'
+    gssp_tiqr_remote_entity_id: 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/metadata'
+    gssp_tiqr_remote_sso_url: 'https://gw.stepup.example.com/app_dev.php/gssp/tiqr/single-sign-on'
     gssp_tiqr_remote_certificate: |
                                   MIIEJTCCAw2gAwIBAgIJANug+o++1X5IMA0GCSqGSIb3DQEBCwUAMIGoMQswCQYD
                                   VQQGEwJOTDEQMA4GA1UECAwHVXRyZWNodDEQMA4GA1UEBwwHVXRyZWNodDEVMBMG
