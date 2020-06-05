@@ -183,10 +183,22 @@
   - php-fpm
   - sendmail
 
+- name: Stop php-fpm if needed
+  service: name={{item}} state=stopped enabled=true
+  with_items:
+    - php-fpm
+  when: needphp7
+
 - name: Start and enable php7-fpm if needed
   service: name={{item}} state=started enabled=true
   with_items:
   - php72-php-fpm
+  when: needphp7
+
+- name: Start php-fpm again
+  service: name={{item}} state=started enabled=true
+  with_items:
+    - php-fpm
   when: needphp7
 
 - name: Put rsyslog config for nginx
